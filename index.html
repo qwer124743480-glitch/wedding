@@ -16,84 +16,196 @@
 <body>
 
 
-<!-- 進入畫面 -->
-
-<div id="startScreen" onclick="startWedding()">
-
-<h1>💍 點擊進入婚禮邀請</h1>
-
-<p>Chen Wei Chiao ♥ Chung Yu Chen</p>
-
-</div>
-
-
-
-<!-- 音樂 -->
+<!-- 婚禮音樂 -->
 
 <audio id="music" loop>
 
-<source src="music/musicwedding.mp3" type="audio/mpeg">
+<source src="music/wedding.mp3">
 
 </audio>
 
 
-
-<!-- 主內容 -->
-
-<div class="container">
+<button class="musicBtn" onclick="playMusic()">🎵</button>
 
 
-<h1>
-陳威橋
+
+<section class="hero">
+
+
+<div class="overlay">
+
+
+<h1>陳威橋</h1>
+
 <span>♥</span>
-鍾侑蓁
-</h1>
+
+<h1>鍾侑蓁</h1>
 
 
-<h2>
-Wedding Day
-</h2>
+<p>我們要結婚了</p>
 
 
-<div class="photo">
+<div id="countdown"></div>
 
-<img id="photo" src="images/photo1.jpg">
 
 </div>
+
+
+</section>
+
+
 
 
 
 <section>
 
 
-<h3>💍 婚禮日期</h3>
+<h2>我們一家</h2>
+
+
+<img class="family" src="images/family.jpg">
+
 
 <p>
-2026年11月22日
+一路走來，我們多了一個最珍貴的寶貝。
+<br>
+期待與親愛的家人朋友一起分享這幸福的一天。
 </p>
 
 
-<h3>⏰ 時間</h3>
-
-<p>
-17:30 入席<br>
-18:00 開席
-</p>
+</section>
 
 
 
-<h3>📍 婚宴地址</h3>
 
-<p>
+
+
+
+<section>
+
+
+<h2>婚禮資訊</h2>
+
+
+<div class="card">
+
+
+📅 2026年11月22日 星期日
+
+<br><br>
+
+🕠 入席時間：17:30
+
+<br>
+
+🍽 開席時間：18:00
+
+<br><br>
+
+📍 Amour 阿沐婚宴會館
+
+<br>
+
 桃園市平鎮區延平路二段371號
-</p>
 
 
-<a class="map"
-href="https://maps.google.com/?q=桃園市平鎮區延平路二段371號"
-target="_blank">
+<br><br>
 
-開啟 Google 地圖導航
+
+<a class="btn"
+href="https://maps.google.com/?q=桃園市平鎮區延平路二段371號">
+
+Google Maps 導航
+
+</a>
+
+
+
+<br><br>
+
+
+<a class="btn"
+href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=陳威橋與鍾侑蓁婚禮&dates=20261122T180000/20261122T210000">
+
+加入 Google 行事曆
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>婚紗相簿</h2>
+
+
+<div class="gallery">
+
+
+<img src="images/photo1.jpg">
+
+<img src="images/photo2.jpg">
+
+<img src="images/photo3.jpg">
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>RSVP 出席確認</h2>
+
+
+<iframe
+
+src="https://docs.google.com/forms/d/e/1FAIpQLScnB3yuF19N3sPLPcKZt2ZUkPL669mRaPRmVvgCEI-2zy8Iew/viewform?embedded=true"
+
+width="100%"
+
+height="800"
+
+frameborder="0">
+
+</iframe>
+
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+
+<h2>留言祝福</h2>
+
+
+<a class="btn" href="#">
+
+留下祝福
 
 </a>
 
@@ -103,36 +215,10 @@ target="_blank">
 
 
 
-<div class="countdown">
 
 
-<h3>距離婚禮還有</h3>
+<div class="petal">🌸</div>
 
-<div id="timer">
-
-</div>
-
-
-</div>
-
-
-
-<button onclick="toggleMusic()">
-
-🎵 音樂播放 / 暫停
-
-</button>
-
-
-
-<footer>
-
-Forever Together ❤️
-
-</footer>
-
-
-</div>
 
 
 
