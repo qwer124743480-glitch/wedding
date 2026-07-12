@@ -20,9 +20,6 @@ function playMusic() {
 
     }
 
-}
-
-
 
 let weddingDate =
 new Date("2026-11-22T18:00:00").getTime();
