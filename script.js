@@ -1,13 +1,18 @@
+// =====================
+// 婚禮音樂播放
+// =====================
+
 let playing = false;
 
-
-// 音樂播放 / 暫停
 
 function playMusic(){
 
     const music = document.getElementById("music");
 
-    if(!music) return;
+
+    if(!music){
+        return;
+    }
 
 
     if(playing){
@@ -16,11 +21,14 @@ function playMusic(){
 
         playing = false;
 
+
     }else{
+
 
         music.play();
 
         playing = true;
+
 
     }
 
@@ -30,7 +38,10 @@ function playMusic(){
 
 
 
-// 婚禮倒數
+// =====================
+// 婚禮倒數計時
+// =====================
+
 
 let weddingDate =
 new Date("2026-11-22T18:00:00").getTime();
@@ -40,61 +51,76 @@ new Date("2026-11-22T18:00:00").getTime();
 setInterval(function(){
 
 
-let now =
-new Date().getTime();
-
-
-let distance =
-weddingDate - now;
+    let now =
+    new Date().getTime();
 
 
 
-let day =
-Math.floor(
-distance/(1000*60*60*24)
-);
+    let distance =
+    weddingDate - now;
 
 
 
-let hour =
-Math.floor(
-(distance%(1000*60*60*24))
-/
-(1000*60*60)
-);
+    let day =
+    Math.floor(
+        distance /
+        (1000 * 60 * 60 * 24)
+    );
 
 
 
-let min =
-Math.floor(
-(distance%(1000*60*60))
-/
-(1000*60)
-);
+    let hour =
+    Math.floor(
+        (distance %
+        (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+    );
 
 
 
-let sec =
-Math.floor(
-(distance%(1000*60))
-/
-1000
-);
+    let min =
+    Math.floor(
+        (distance %
+        (1000 * 60 * 60))
+        /
+        (1000 * 60)
+    );
 
 
 
-document.getElementById("countdown").innerHTML =
+    let sec =
+    Math.floor(
+        (distance %
+        (1000 * 60))
+        /
+        1000
+    );
 
-"距離婚禮還有<br>" +
 
-day + "天 " +
 
-hour + "小時 " +
+    let countdown =
+    document.getElementById("countdown");
 
-min + "分 " +
 
-sec + "秒";
 
+    if(countdown){
+
+
+        countdown.innerHTML =
+
+        "距離婚禮還有<br>" +
+
+        day + "天 " +
+
+        hour + "小時 " +
+
+        min + "分 " +
+
+        sec + "秒";
+
+
+    }
 
 
 },1000);
@@ -105,42 +131,48 @@ sec + "秒";
 
 
 
-
+// =====================
 // 白色花瓣動畫
+// =====================
 
 
-setInterval(()=>{
+setInterval(function(){
 
 
-let p = document.createElement("div");
-
-
-p.className = "petal";
-
-
-p.innerHTML = "❀";
+    let p =
+    document.createElement("div");
 
 
 
-p.style.left =
-Math.random()*100 + "%";
+    p.className =
+    "petal";
 
 
 
-p.style.animationDuration =
-(5 + Math.random()*5) + "s";
+    p.innerHTML =
+    "❀";
 
 
 
-document.body.appendChild(p);
+    p.style.left =
+    Math.random()*100 + "%";
 
 
 
-setTimeout(()=>{
+    p.style.animationDuration =
+    (5 + Math.random()*5) + "s";
 
-p.remove();
 
-},10000);
+
+    document.body.appendChild(p);
+
+
+
+    setTimeout(function(){
+
+        p.remove();
+
+    },10000);
 
 
 
