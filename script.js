@@ -1,123 +1,71 @@
-body{
+let player;
 
-margin:0;
-font-family:
-"Noto Sans TC",
-sans-serif;
 
-background:
-linear-gradient(
-#fff5f7,
-#ffffff
+function onYouTubeIframeAPIReady(){
+
+player = new YT.Player(
+'youtubePlayer'
 );
 
-color:#555;
+}
 
-text-align:center;
+
+
+function playMusic(){
+
+player.playVideo();
 
 }
 
 
 
-header{
 
-padding:80px 20px;
-
-background:
-url("images/photo1.jpg")
-center/cover;
-
-color:white;
-
-}
+let weddingDate =
+new Date("2026-11-22T18:00:00").getTime();
 
 
 
-h1{
-
-font-size:45px;
-
-}
+setInterval(function(){
 
 
+let now =
+new Date().getTime();
 
-section{
 
-padding:40px 20px;
-
-}
+let distance =
+weddingDate-now;
 
 
 
-.btn{
-
-display:inline-block;
-
-padding:12px 25px;
-
-background:#d88b9a;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:30px;
-
-}
+let day =
+Math.floor(
+distance/(1000*60*60*24)
+);
 
 
 
-.gallery{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
+let hour =
+Math.floor(
+(distance%(1000*60*60*24))
+/(1000*60*60)
+);
 
 
 
-.gallery img{
-
-width:280px;
-
-height:380px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-box-shadow:
-0 5px 20px #ccc;
-
-}
+let min =
+Math.floor(
+(distance%(1000*60*60))
+/(1000*60)
+);
 
 
 
-button{
+document.getElementById("countdown").innerHTML=
 
-margin-top:20px;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:30px;
-
-background:white;
-
-color:#d88b9a;
-
-}
+"距離婚禮還有 "
++day+" 天 "
++hour+" 小時 "
++min+" 分鐘";
 
 
-
-footer{
-
-padding:30px;
-
-}
+},1000);
