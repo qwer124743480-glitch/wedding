@@ -1,9 +1,28 @@
 function playMusic(){
 
-let music = document.getElementById("music");
+let musicPlaying = false;
 
-music.play();
+function playMusic() {
 
+    const player = document.getElementById("youtubePlayer");
+
+    if (!musicPlaying) {
+
+        player.src =
+        "https://www.youtube.com/embed/BUxYSJVIKi8?autoplay=1&controls=0&loop=1&playlist=BUxYSJVIKi8";
+
+        musicPlaying = true;
+
+    } else {
+
+        player.src =
+        "https://www.youtube.com/embed/BUxYSJVIKi8?controls=0&loop=1&playlist=BUxYSJVIKi8";
+
+        musicPlaying = false;
+
+    }
+
+}
 }
 
 
