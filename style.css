@@ -1,0 +1,60 @@
+
+function playMusic(){
+
+let music=document.getElementById("music");
+
+music.play();
+
+}
+
+
+
+let weddingDate =
+new Date("2026-11-22T18:00:00").getTime();
+
+
+
+setInterval(function(){
+
+
+let now =
+new Date().getTime();
+
+
+let distance =
+weddingDate-now;
+
+
+
+let day =
+Math.floor(
+distance/(1000*60*60*24)
+);
+
+
+
+let hour =
+Math.floor(
+(distance%(1000*60*60*24))
+/(1000*60*60)
+);
+
+
+
+let min =
+Math.floor(
+(distance%(1000*60*60))
+/(1000*60)
+);
+
+
+
+document.getElementById("countdown").innerHTML=
+
+"距離婚禮還有 "
++day+" 天 "
++hour+" 小時 "
++min+" 分鐘";
+
+
+},1000);
