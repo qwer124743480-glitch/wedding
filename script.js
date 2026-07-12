@@ -1,24 +1,16 @@
-let player;
-let musicPlaying = false;
+let playing = false;
 
-function onYouTubeIframeAPIReady() {
+function playMusic() {
 
-    player = new YT.Player('youtubePlayer', {
+    const music = document.getElementById("music");
 
-        height: '1',
-        width: '1',
-
-        videoId: 'BUxYSJVIKi8',
-
-        playerVars: {
-            autoplay: 0,
-            controls: 0,
-            loop: 1,
-            playlist: 'BUxYSJVIKi8',
-            rel: 0
-        }
-
-    });
+    if (playing) {
+        music.pause();
+        playing = false;
+    } else {
+        music.play();
+        playing = true;
+    }
 
 }
 
