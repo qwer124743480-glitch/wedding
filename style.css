@@ -243,3 +243,22 @@ font-size:30px;
 
 
 }
+
+
+/* YouTube 婚禮音樂隱藏播放器 */
+
+.youtubeMusic{
+
+position:fixed;
+
+width:1px;
+
+height:1px;
+
+overflow:hidden;
+
+bottom:0;
+
+right:0;
+
+}
