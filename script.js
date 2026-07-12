@@ -1,25 +1,44 @@
+let player;
 let musicPlaying = false;
+
+function onYouTubeIframeAPIReady() {
+
+    player = new YT.Player('youtubePlayer', {
+
+        height: '1',
+        width: '1',
+
+        videoId: 'BUxYSJVIKi8',
+
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            loop: 1,
+            playlist: 'BUxYSJVIKi8',
+            rel: 0
+        }
+
+    });
+
+}
 
 function playMusic() {
 
-    const player = document.getElementById("youtubePlayer");
+    if (!player) return;
 
-    if (!musicPlaying) {
+    if (musicPlaying) {
 
-        player.src =
-        "https://www.youtube.com/embed/BUxYSJVIKi8?autoplay=1&controls=0&loop=1&playlist=BUxYSJVIKi8";
-
-        musicPlaying = true;
+        player.pauseVideo();
+        musicPlaying = false;
 
     } else {
 
-        player.src =
-        "https://www.youtube.com/embed/BUxYSJVIKi8?controls=0&loop=1&playlist=BUxYSJVIKi8";
-
-        musicPlaying = false;
+        player.playVideo();
+        musicPlaying = true;
 
     }
 
+}
 
 let weddingDate =
 new Date("2026-11-22T18:00:00").getTime();
