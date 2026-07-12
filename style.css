@@ -460,3 +460,7 @@ font-size:16px;
 #message{
 display:none;
 }
+.ring{
+font-size:45px;
+filter: grayscale(1) brightness(3);
+}
