@@ -1,7 +1,6 @@
-function playMusic(){
-
 let musicPlaying = false;
 
+function playMusic() {
 
     const player = document.getElementById("youtubePlayer");
 
@@ -21,7 +20,6 @@ let musicPlaying = false;
 
     }
 
-}
 }
 
 
