@@ -1,6 +1,6 @@
 function playMusic(){
 
-let music=document.getElementById("music");
+let music = document.getElementById("music");
 
 music.play();
 
@@ -8,20 +8,23 @@ music.play();
 
 
 
-let weddingDate =
+
+
+let weddingDate = 
 new Date("2026-11-22T18:00:00").getTime();
+
 
 
 
 setInterval(function(){
 
 
-let now =
+let now = 
 new Date().getTime();
 
 
 let distance =
-weddingDate-now;
+weddingDate - now;
 
 
 
@@ -56,13 +59,19 @@ Math.floor(
 
 
 
-document.getElementById("countdown").innerHTML=
 
-"距離婚禮還有<br>"+
-day+"天 "+
-hour+"小時 "+
-min+"分 "+
-sec+"秒";
+document.getElementById("countdown").innerHTML =
+
+"距離婚禮還有<br>" +
+
+day + "天 " +
+
+hour + "小時 " +
+
+min + "分 " +
+
+sec + "秒";
+
 
 
 },1000);
@@ -71,12 +80,15 @@ sec+"秒";
 
 
 
+
+
 // 花瓣增加
+
 
 setInterval(()=>{
 
 
-let p=document.createElement("div");
+let p = document.createElement("div");
 
 
 p.className="petal";
@@ -85,10 +97,12 @@ p.className="petal";
 p.innerHTML="🌸";
 
 
-p.style.left=Math.random()*100+"%";
+p.style.left =
+Math.random()*100+"%";
 
 
-p.style.animationDuration=
+
+p.style.animationDuration =
 (5+Math.random()*5)+"s";
 
 
