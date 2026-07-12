@@ -1,67 +1,245 @@
-body {
-    margin:0;
-    background-image:url("images/bg.jpg");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    min-height:100vh;
-}
-function playMusic(){
-
-let music=document.getElementById("music");
-
-music.play();
-
+*{
+box-sizing:border-box;
 }
 
 
+body{
 
-let weddingDate =
-new Date("2026-11-22T18:00:00").getTime();
+margin:0;
+font-family:
+"Noto Serif TC",
+serif;
 
+text-align:center;
 
+background:#fffaf3;
 
-setInterval(function(){
+color:#5b4636;
 
-
-let now =
-new Date().getTime();
-
-
-let distance =
-weddingDate-now;
-
-
-
-let day =
-Math.floor(
-distance/(1000*60*60*24)
-);
+}
 
 
 
-let hour =
-Math.floor(
-(distance%(1000*60*60*24))
-/(1000*60*60)
-);
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.35)
+),
+url(images/cover.jpg);
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+}
 
 
 
-let min =
-Math.floor(
-(distance%(1000*60*60))
-/(1000*60)
-);
+.overlay h1{
+
+font-size:55px;
+
+margin:10px;
+
+letter-spacing:8px;
+
+}
 
 
 
-document.getElementById("countdown").innerHTML=
+.overlay span{
 
-"距離婚禮還有 "
-+day+" 天 "
-+hour+" 小時 "
-+min+" 分鐘";
+font-size:40px;
+
+}
 
 
-},1000);
+
+#countdown{
+
+font-size:28px;
+
+margin-top:30px;
+
+}
+
+
+
+
+section{
+
+padding:60px 20px;
+
+}
+
+
+
+h2{
+
+font-size:38px;
+
+color:#b08d57;
+
+}
+
+
+
+.family{
+
+width:90%;
+
+max-width:500px;
+
+border-radius:20px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px #ddd;
+
+font-size:20px;
+
+}
+
+
+
+.btn{
+
+display:inline-block;
+
+padding:15px 25px;
+
+background:#b08d57;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+}
+
+
+
+.gallery{
+
+display:flex;
+
+overflow-x:auto;
+
+gap:20px;
+
+}
+
+
+
+.gallery img{
+
+width:300px;
+
+height:400px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+
+.musicBtn{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+z-index:99;
+
+border:none;
+
+border-radius:50%;
+
+width:60px;
+
+height:60px;
+
+font-size:25px;
+
+background:#b08d57;
+
+color:white;
+
+}
+
+
+
+/* 花瓣 */
+
+.petal{
+
+position:fixed;
+
+top:-20px;
+
+font-size:30px;
+
+animation:fall 8s linear infinite;
+
+}
+
+
+@keyframes fall{
+
+to{
+
+transform:
+translateY(110vh)
+rotate(360deg);
+
+}
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.overlay h1{
+
+font-size:40px;
+
+}
+
+
+h2{
+
+font-size:30px;
+
+}
+
+
+}
