@@ -218,8 +218,6 @@ z-index:10;
 
 }
 
-
-
 @keyframes fall{
 
 to{
@@ -232,39 +230,23 @@ rotate(360deg);
 
 }
 
-
-
-@media(max-width:600px){
-
-
-.overlay h1{
-
-font-size:40px;
-
-}
-
-
-h2{
-
-font-size:30px;
-
-}
-
-
-}
-
-
-/* YouTube 婚禮音樂隱藏播放器 */
+/* YouTube 婚禮音樂 */
 
 .youtubeMusic{
 
 position:fixed;
+
+left:-9999px;
+
+top:-9999px;
 
 width:1px;
 
 height:1px;
 
 overflow:hidden;
+
+}
 
 bottom:0;
 
