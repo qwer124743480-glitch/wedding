@@ -22,6 +22,18 @@ color:#5b4636;
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;600&display=swap');
+
+
+body{
+
+font-family:
+"Noto Serif TC",
+serif;
+
+}
+
+
 /* 首頁 */
 
 .hero{
@@ -31,15 +43,11 @@ height:100vh;
 background:
 
 linear-gradient(
-
 rgba(0,0,0,.35),
-
-rgba(0,0,0,.35)
-
+rgba(0,0,0,.45)
 ),
 
-url("./images/cover.jpg");
-
+url("images/cover.jpg");
 
 background-size:cover;
 
@@ -47,58 +55,96 @@ background-position:center;
 
 display:flex;
 
+align-items:center;
+
 justify-content:center;
 
-align-items:center;
+}
+
+
+.overlay{
+
+text-align:center;
 
 color:white;
 
 }
 
 
+.date{
+
+font-family:
+"Cormorant Garamond",
+serif;
+
+font-size:28px;
+
+letter-spacing:6px;
+
+margin-bottom:40px;
+
+}
 
 
+.hero h1{
 
-.overlay h1{
+font-family:
+"Noto Serif TC",
+serif;
 
 font-size:55px;
 
+font-weight:300;
+
+letter-spacing:12px;
+
+margin:20px 0;
+
+}
+
+
+.ring{
+
+font-size:42px;
+
+margin:0 20px;
+
+}
+
+
+.english{
+
+font-family:
+"Cormorant Garamond",
+serif;
+
+font-size:55px;
+
+font-style:italic;
+
 margin:10px;
+
+}
+
+
+.subtitle{
+
+font-size:22px;
 
 letter-spacing:8px;
 
-}
-
-
-
-
-.overlay span{
-
-font-size:40px;
+margin-top:30px;
 
 }
-
-
-
-
-.overlay p{
-
-font-size:26px;
-
-margin-top:25px;
-
-}
-
-
 
 
 #countdown{
 
-font-size:28px;
+margin-top:50px;
 
-margin-top:30px;
+font-size:22px;
 
-line-height:1.6;
+letter-spacing:3px;
 
 }
 
