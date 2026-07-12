@@ -357,3 +357,56 @@ font-size:30px;
 
 
 }
+/* 白色小花 */
+
+.petal{
+
+position:fixed;
+
+top:-30px;
+
+color:white;
+
+font-size:20px;
+
+z-index:9999;
+
+pointer-events:none;
+
+text-shadow:
+0 0 8px rgba(255,255,255,0.9);
+
+animation:flowerFall linear forwards;
+
+}
+
+
+
+
+@keyframes flowerFall{
+
+
+0%{
+
+transform:
+translateY(-30px)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+
+}
