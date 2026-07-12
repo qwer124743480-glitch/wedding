@@ -1,8 +1,31 @@
 function playMusic(){
 
-    let music = document.getElementById("music");
+let music=document.getElementById("music");
 
-    music.play();
+let btn=document.querySelector(".musicBtn");
+
+
+if(music.paused){
+
+music.play();
+
+btn.classList.add("playing");
+
+btn.innerHTML="❚❚";
+
+
+}else{
+
+
+music.pause();
+
+btn.classList.remove("playing");
+
+btn.innerHTML="▶";
+
+
+}
+
 
 }
 
