@@ -1,6 +1,6 @@
 function playMusic(){
 
-let music=document.getElementById("music");
+let music = document.getElementById("music");
 
 music.play();
 
