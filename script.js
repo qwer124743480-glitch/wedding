@@ -1,13 +1,17 @@
 function playMusic(){
 
-let music = document.getElementById("music");
+    let music = document.getElementById("music");
 
-music.play();
+    music.play();
 
 }
 
 
 
+
+
+
+// 婚禮倒數
 
 let weddingDate = 
 new Date("2026-11-22T18:00:00").getTime();
@@ -18,56 +22,58 @@ new Date("2026-11-22T18:00:00").getTime();
 setInterval(function(){
 
 
-let now = new Date().getTime();
+    let now = new Date().getTime();
 
 
-let distance =
-weddingDate - now;
-
-
-
-let day =
-Math.floor(
-distance/(1000*60*60*24)
-);
+    let distance = weddingDate - now;
 
 
 
-let hour =
-Math.floor(
-(distance%(1000*60*60*24))
-/(1000*60*60)
-);
+    let day =
+    Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
 
 
 
-let min =
-Math.floor(
-(distance%(1000*60*60))
-/(1000*60)
-);
+    let hour =
+    Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        /
+        (1000 * 60 * 60)
+    );
 
 
 
-let sec =
-Math.floor(
-(distance%(1000*60))
-/1000
-);
+    let min =
+    Math.floor(
+        (distance % (1000 * 60 * 60))
+        /
+        (1000 * 60)
+    );
 
 
 
-document.getElementById("countdown").innerHTML =
+    let sec =
+    Math.floor(
+        (distance % (1000 * 60))
+        /
+        1000
+    );
 
-"距離婚禮還有<br>" +
 
-day + "天 " +
 
-hour + "小時 " +
+    document.getElementById("countdown").innerHTML =
 
-min + "分 " +
+    "距離婚禮還有<br>" +
 
-sec + "秒";
+    day + "天 " +
+
+    hour + "小時 " +
+
+    min + "分 " +
+
+    sec + "秒";
 
 
 
@@ -78,46 +84,57 @@ sec + "秒";
 
 
 
+
+
+// ======================
 // 白色小花飄落
+// ======================
 
 
 setInterval(()=>{
 
 
-let p = document.createElement("div");
+    let flower = document.createElement("div");
 
 
-p.className="petal";
+    flower.className="petal";
 
 
-p.innerHTML="✿";
+    // 白色小花
 
-
-
-p.style.left =
-Math.random()*100+"%";
+    flower.innerHTML="✿";
 
 
 
-p.style.animationDuration =
-(6+Math.random()*6)+"s";
+    flower.style.left =
+
+    Math.random()*100+"vw";
 
 
 
-p.style.fontSize =
-(14+Math.random()*18)+"px";
+    flower.style.animationDuration =
+
+    (6 + Math.random()*6) + "s";
 
 
 
-document.body.appendChild(p);
+    flower.style.fontSize =
+
+    (14 + Math.random()*18) + "px";
 
 
 
-setTimeout(()=>{
+    document.body.appendChild(flower);
 
-p.remove();
 
-},12000);
+
+    setTimeout(()=>{
+
+
+        flower.remove();
+
+
+    },12000);
 
 
 
