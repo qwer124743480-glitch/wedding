@@ -1,22 +1,10 @@
-let player;
-
-
-function onYouTubeIframeAPIReady(){
-
-player = new YT.Player(
-'youtubePlayer'
-);
-
-}
-
-
-
 function playMusic(){
 
-player.playVideo();
+let music=document.getElementById("music");
+
+music.play();
 
 }
-
 
 
 
@@ -43,7 +31,6 @@ distance/(1000*60*60*24)
 );
 
 
-
 let hour =
 Math.floor(
 (distance%(1000*60*60*24))
@@ -60,12 +47,54 @@ Math.floor(
 
 
 
+let sec =
+Math.floor(
+(distance%(1000*60))
+/1000
+);
+
+
+
 document.getElementById("countdown").innerHTML=
 
-"距離婚禮還有 "
-+day+" 天 "
-+hour+" 小時 "
-+min+" 分鐘";
+"距離婚禮還有<br>"+
+day+"天 "+
+hour+"小時 "+
+min+"分 "+
+sec+"秒";
 
 
 },1000);
+
+
+
+
+// 花瓣增加
+
+setInterval(()=>{
+
+
+let p=document.createElement("div");
+
+p.className="petal";
+
+p.innerHTML="🌸";
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(p);
+
+
+
+setTimeout(()=>{
+
+p.remove();
+
+},10000);
+
+
+},500);
