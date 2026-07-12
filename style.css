@@ -22,12 +22,11 @@ color:#5b4636;
 
 
 
+/* 首頁 */
 
 .hero{
 
-
 height:100vh;
-
 
 background:
 
@@ -42,245 +41,230 @@ rgba(0,0,0,.35)
 url("./images/cover.jpg");
 
 
-
 background-size:cover;
-
 
 background-position:center;
 
-
 display:flex;
-
 
 justify-content:center;
 
-
 align-items:center;
-
 
 color:white;
 
-
 }
-
 
 
 
 
 .overlay h1{
 
-
 font-size:55px;
-
 
 margin:10px;
 
-
 letter-spacing:8px;
 
-
 }
-
 
 
 
 .overlay span{
 
-
 font-size:40px;
-
 
 }
 
+
+
+
+.overlay p{
+
+font-size:26px;
+
+}
 
 
 
 
 #countdown{
 
-
 font-size:28px;
-
 
 margin-top:30px;
 
+line-height:1.6;
 
 }
 
 
 
 
+
+
+/* 區塊 */
 
 section{
 
-
 padding:60px 20px;
 
-
 }
-
 
 
 
 
 h2{
 
-
 font-size:38px;
-
 
 color:#b08d57;
 
+letter-spacing:3px;
 
 }
 
 
 
 
+
+
+/* 家庭照片 */
 
 .family{
 
-
 width:90%;
-
 
 max-width:500px;
 
-
 border-radius:20px;
-
-
-}
-
-
-
-
-
-.card{
-
-
-background:white;
-
-
-padding:30px;
-
-
-border-radius:20px;
-
 
 box-shadow:0 10px 30px #ddd;
 
+}
+
+
+
+
+
+
+/* 婚禮資訊 */
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px #ddd;
 
 font-size:20px;
 
+line-height:1.8;
 
 }
 
 
 
 
+
+
+/* 按鈕 */
 
 .btn{
 
-
 display:inline-block;
-
 
 padding:15px 25px;
 
-
 background:#b08d57;
-
 
 color:white;
 
-
 text-decoration:none;
-
 
 border-radius:30px;
 
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+transform:scale(1.05);
 
 }
 
 
 
 
+
+/* 相簿 */
 
 .gallery{
 
-
 display:flex;
-
 
 overflow-x:auto;
 
-
 gap:20px;
 
+padding:10px;
 
 }
-
-
 
 
 
 .gallery img{
 
-
 width:300px;
-
 
 height:400px;
 
-
 object-fit:cover;
-
 
 border-radius:20px;
 
+box-shadow:0 10px 25px #ddd;
 
 }
 
 
 
 
+
+
+/* 音樂按鈕 */
 
 .musicBtn{
 
-
 position:fixed;
-
 
 right:20px;
 
-
 bottom:20px;
 
-
-z-index:99;
-
+z-index:999;
 
 border:none;
 
-
 border-radius:50%;
-
 
 width:60px;
 
-
 height:60px;
-
 
 font-size:25px;
 
-
 background:#b08d57;
-
 
 color:white;
 
+cursor:pointer;
 
 }
 
@@ -288,76 +272,11 @@ color:white;
 
 
 
-/* 花瓣 */
 
+/* ================= */
+/* 白色小花飄落 */
+/* ================= */
 
-.petal{
-
-
-position:fixed;
-
-
-top:-20px;
-
-
-font-size:30px;
-
-
-animation:fall 8s linear infinite;
-
-
-z-index:10;
-
-
-}
-
-
-
-@keyframes fall{
-
-
-to{
-
-
-transform:
-
-translateY(110vh)
-
-rotate(360deg);
-
-
-}
-
-
-}
-
-
-
-
-@media(max-width:600px){
-
-
-.overlay h1{
-
-
-font-size:40px;
-
-
-}
-
-
-
-h2{
-
-
-font-size:30px;
-
-
-}
-
-
-}
-/* 白色小花 */
 
 .petal{
 
@@ -373,12 +292,16 @@ z-index:9999;
 
 pointer-events:none;
 
+
 text-shadow:
-0 0 8px rgba(255,255,255,0.9);
+
+0 0 8px rgba(255,255,255,.9);
+
 
 animation:flowerFall linear forwards;
 
 }
+
 
 
 
@@ -388,11 +311,16 @@ animation:flowerFall linear forwards;
 
 0%{
 
+
 transform:
+
 translateY(-30px)
+
 rotate(0deg);
 
+
 opacity:1;
+
 
 }
 
@@ -400,13 +328,90 @@ opacity:1;
 
 100%{
 
+
 transform:
+
 translateY(110vh)
+
 rotate(360deg);
+
 
 opacity:0;
 
+
 }
+
+
+}
+
+
+
+
+
+
+/* 手機版 */
+
+@media(max-width:600px){
+
+
+.overlay h1{
+
+font-size:40px;
+
+letter-spacing:5px;
+
+}
+
+
+
+.overlay span{
+
+font-size:30px;
+
+}
+
+
+
+.overlay p{
+
+font-size:22px;
+
+}
+
+
+
+#countdown{
+
+font-size:22px;
+
+}
+
+
+
+h2{
+
+font-size:30px;
+
+}
+
+
+
+.gallery img{
+
+width:250px;
+
+height:330px;
+
+}
+
+
+
+.card{
+
+font-size:18px;
+
+}
+
 
 
 }
