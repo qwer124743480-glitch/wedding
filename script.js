@@ -1,36 +1,36 @@
 let playing = false;
 
-function playMusic() {
+
+// 音樂播放 / 暫停
+
+function playMusic(){
 
     const music = document.getElementById("music");
 
-    if (playing) {
+    if(!music) return;
+
+
+    if(playing){
+
         music.pause();
+
         playing = false;
-    } else {
+
+    }else{
+
         music.play();
+
         playing = true;
-    }
-
-}
-
-function playMusic() {
-
-    if (!player) return;
-
-    if (musicPlaying) {
-
-        player.pauseVideo();
-        musicPlaying = false;
-
-    } else {
-
-        player.playVideo();
-        musicPlaying = true;
 
     }
 
 }
+
+
+
+
+
+// 婚禮倒數
 
 let weddingDate =
 new Date("2026-11-22T18:00:00").getTime();
@@ -45,7 +45,7 @@ new Date().getTime();
 
 
 let distance =
-weddingDate-now;
+weddingDate - now;
 
 
 
@@ -55,10 +55,12 @@ distance/(1000*60*60*24)
 );
 
 
+
 let hour =
 Math.floor(
 (distance%(1000*60*60*24))
-/(1000*60*60)
+/
+(1000*60*60)
 );
 
 
@@ -66,7 +68,8 @@ Math.floor(
 let min =
 Math.floor(
 (distance%(1000*60*60))
-/(1000*60)
+/
+(1000*60)
 );
 
 
@@ -74,18 +77,24 @@ Math.floor(
 let sec =
 Math.floor(
 (distance%(1000*60))
-/1000
+/
+1000
 );
 
 
 
-document.getElementById("countdown").innerHTML=
+document.getElementById("countdown").innerHTML =
 
-"距離婚禮還有<br>"+
-day+"天 "+
-hour+"小時 "+
-min+"分 "+
-sec+"秒";
+"距離婚禮還有<br>" +
+
+day + "天 " +
+
+hour + "小時 " +
+
+min + "分 " +
+
+sec + "秒";
+
 
 
 },1000);
@@ -93,21 +102,34 @@ sec+"秒";
 
 
 
-// 花瓣增加
+
+
+
+
+// 白色花瓣動畫
+
 
 setInterval(()=>{
 
 
-let p=document.createElement("div");
+let p = document.createElement("div");
 
-p.className="petal";
 
-p.innerHTML="🌸";
+p.className = "petal";
 
-p.style.left=Math.random()*100+"%";
 
-p.style.animationDuration=
-(5+Math.random()*5)+"s";
+p.innerHTML = "❀";
+
+
+
+p.style.left =
+Math.random()*100 + "%";
+
+
+
+p.style.animationDuration =
+(5 + Math.random()*5) + "s";
+
 
 
 document.body.appendChild(p);
@@ -119,6 +141,7 @@ setTimeout(()=>{
 p.remove();
 
 },10000);
+
 
 
 },500);
