@@ -1,46 +1,50 @@
-// =====================
-// 婚禮音樂播放
-// =====================
+//開始婚禮網站
 
-let playing = false;
+function startWedding(){
 
 
-function playMusic(){
-
-    const music = document.getElementById("music");
+let music=document.getElementById("music");
 
 
-    if(!music){
-        return;
-    }
+music.volume=0.5;
 
 
-    if(playing){
-
-        music.pause();
-
-        playing = false;
+music.play();
 
 
-    }else{
+
+document.getElementById("startScreen").style.display="none";
 
 
-        music.play();
-
-        playing = true;
+}
 
 
-    }
+
+//音樂控制
+
+function toggleMusic(){
+
+
+let music=document.getElementById("music");
+
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
 
 }
 
 
 
 
-
-// =====================
-// 婚禮倒數計時
-// =====================
+//倒數計時
 
 
 let weddingDate =
@@ -51,76 +55,51 @@ new Date("2026-11-22T18:00:00").getTime();
 setInterval(function(){
 
 
-    let now =
-    new Date().getTime();
+let now =
+new Date().getTime();
+
+
+let distance =
+weddingDate-now;
 
 
 
-    let distance =
-    weddingDate - now;
+let day =
+Math.floor(distance/(1000*60*60*24));
 
 
 
-    let day =
-    Math.floor(
-        distance /
-        (1000 * 60 * 60 * 24)
-    );
+let hour =
+Math.floor(
+(distance%(1000*60*60*24))
+/(1000*60*60)
+);
 
 
 
-    let hour =
-    Math.floor(
-        (distance %
-        (1000 * 60 * 60 * 24))
-        /
-        (1000 * 60 * 60)
-    );
+let minute =
+Math.floor(
+(distance%(1000*60*60))
+/(1000*60)
+);
 
 
 
-    let min =
-    Math.floor(
-        (distance %
-        (1000 * 60 * 60))
-        /
-        (1000 * 60)
-    );
+let second =
+Math.floor(
+(distance%(1000*60))
+/1000
+);
 
 
 
-    let sec =
-    Math.floor(
-        (distance %
-        (1000 * 60))
-        /
-        1000
-    );
+document.getElementById("timer").innerHTML =
 
+day+"天 "+
+hour+"小時 "+
+minute+"分 "+
+second+"秒";
 
-
-    let countdown =
-    document.getElementById("countdown");
-
-
-
-    if(countdown){
-
-
-        countdown.innerHTML =
-
-        "距離婚禮還有<br>" +
-
-        day + "天 " +
-
-        hour + "小時 " +
-
-        min + "分 " +
-
-        sec + "秒";
-
-
-    }
 
 
 },1000);
@@ -129,51 +108,40 @@ setInterval(function(){
 
 
 
+//照片輪播
 
 
-// =====================
-// 白色花瓣動畫
-// =====================
+let photos=[
+
+"images/photo1.jpg",
+
+"images/photo2.jpg",
+
+"images/photo3.jpg"
+
+];
+
+
+
+let index=0;
+
 
 
 setInterval(function(){
 
 
-    let p =
-    document.createElement("div");
+index++;
 
 
+if(index>=photos.length){
 
-    p.className =
-    "petal";
+index=0;
 
-
-
-    p.innerHTML =
-    "❀";
+}
 
 
-
-    p.style.left =
-    Math.random()*100 + "%";
-
+document.getElementById("photo").src=
+photos[index];
 
 
-    p.style.animationDuration =
-    (5 + Math.random()*5) + "s";
-
-
-
-    document.body.appendChild(p);
-
-
-
-    setTimeout(function(){
-
-        p.remove();
-
-    },10000);
-
-
-
-},500);
+},4000);
