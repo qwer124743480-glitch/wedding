@@ -9,7 +9,6 @@ music.play();
 
 
 
-
 let weddingDate = 
 new Date("2026-11-22T18:00:00").getTime();
 
@@ -19,8 +18,7 @@ new Date("2026-11-22T18:00:00").getTime();
 setInterval(function(){
 
 
-let now = 
-new Date().getTime();
+let now = new Date().getTime();
 
 
 let distance =
@@ -59,7 +57,6 @@ Math.floor(
 
 
 
-
 document.getElementById("countdown").innerHTML =
 
 "距離婚禮還有<br>" +
@@ -81,8 +78,7 @@ sec + "秒";
 
 
 
-
-// 花瓣增加
+// 白色小花飄落
 
 
 setInterval(()=>{
@@ -94,7 +90,8 @@ let p = document.createElement("div");
 p.className="petal";
 
 
-p.innerHTML="🌸";
+p.innerHTML="✿";
+
 
 
 p.style.left =
@@ -103,7 +100,12 @@ Math.random()*100+"%";
 
 
 p.style.animationDuration =
-(5+Math.random()*5)+"s";
+(6+Math.random()*6)+"s";
+
+
+
+p.style.fontSize =
+(14+Math.random()*18)+"px";
 
 
 
@@ -115,8 +117,8 @@ setTimeout(()=>{
 
 p.remove();
 
-},10000);
+},12000);
 
 
 
-},500);
+},600);
