@@ -462,5 +462,5 @@ display:none;
 }
 .ring{
 font-size:45px;
-filter: grayscale(1) brightness(3);
+filter: sepia(1) saturate(3);
 }
