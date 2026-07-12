@@ -507,8 +507,13 @@ font-size:16px;
 display:none;
 }
 .ring{
-font-size:45px;
+
+font-size:32px;
+
+margin:0 10px;
+
 filter: sepia(1) saturate(3);
+
 }
 /* ===== 高級婚禮首頁升級 ===== */
 
