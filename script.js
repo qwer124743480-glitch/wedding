@@ -1,50 +1,11 @@
-//開始婚禮網站
-
-function startWedding(){
-
+function playMusic(){
 
 let music=document.getElementById("music");
 
-
-music.volume=0.5;
-
-
 music.play();
 
-
-
-document.getElementById("startScreen").style.display="none";
-
-
 }
 
-
-
-//音樂控制
-
-function toggleMusic(){
-
-
-let music=document.getElementById("music");
-
-
-if(music.paused){
-
-music.play();
-
-}else{
-
-music.pause();
-
-}
-
-
-}
-
-
-
-
-//倒數計時
 
 
 let weddingDate =
@@ -65,7 +26,9 @@ weddingDate-now;
 
 
 let day =
-Math.floor(distance/(1000*60*60*24));
+Math.floor(
+distance/(1000*60*60*24)
+);
 
 
 
@@ -77,7 +40,7 @@ Math.floor(
 
 
 
-let minute =
+let min =
 Math.floor(
 (distance%(1000*60*60))
 /(1000*60)
@@ -85,7 +48,7 @@ Math.floor(
 
 
 
-let second =
+let sec =
 Math.floor(
 (distance%(1000*60))
 /1000
@@ -93,13 +56,13 @@ Math.floor(
 
 
 
-document.getElementById("timer").innerHTML =
+document.getElementById("countdown").innerHTML=
 
+"距離婚禮還有<br>"+
 day+"天 "+
 hour+"小時 "+
-minute+"分 "+
-second+"秒";
-
+min+"分 "+
+sec+"秒";
 
 
 },1000);
@@ -108,40 +71,38 @@ second+"秒";
 
 
 
-//照片輪播
+// 花瓣增加
+
+setInterval(()=>{
 
 
-let photos=[
-
-"images/photo1.jpg",
-
-"images/photo2.jpg",
-
-"images/photo3.jpg"
-
-];
+let p=document.createElement("div");
 
 
-
-let index=0;
-
+p.className="petal";
 
 
-setInterval(function(){
+p.innerHTML="🌸";
 
 
-index++;
+p.style.left=Math.random()*100+"%";
 
 
-if(index>=photos.length){
-
-index=0;
-
-}
+p.style.animationDuration=
+(5+Math.random()*5)+"s";
 
 
-document.getElementById("photo").src=
-photos[index];
+
+document.body.appendChild(p);
 
 
-},4000);
+
+setTimeout(()=>{
+
+p.remove();
+
+},10000);
+
+
+
+},500);
