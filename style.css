@@ -586,13 +586,14 @@ text-shadow:
 
 
 .english{
-
-font-size:70px;
-
-letter-spacing:8px;
-
-margin-top:0;
-
+    font-family:'Allura', cursive;
+    font-size:72px;
+    color:#d4b06a;
+    font-weight:400;
+    letter-spacing:1px;
+    margin-top:0;
+    transform:rotate(-2deg);
+    text-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 
 
